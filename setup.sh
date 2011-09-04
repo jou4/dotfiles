@@ -8,3 +8,9 @@ do
         ln -Fis "$PWD/$dotfile" "$HOME/.$dotfile"
     fi
 done
+
+git submodule init
+git submodule update
+git submodule foreach 'git checkout master; git pull'
+
+echo 'execute :BundleInstall!'
