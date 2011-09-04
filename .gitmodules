@@ -1,0 +1,12 @@
+[submodule "vundle.git"]
+    path = vundle.git
+    url = http://github.com/gmarik/vundle.git
+[submodule "bundle/vundle"]
+    path = bundle/vundle
+    url = http://github.com/gmarik/vundle.git
+[submodule "vim/vundle"]
+    path = vim/vundle
+    url = http://github.com/gmarik/vundle.git
+[submodule "vim/pathogen"]
+    path = vim/pathogen
+    url = http://github.com/tpope/vim-pathogen.git
