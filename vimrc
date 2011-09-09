@@ -94,6 +94,9 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'unite-colorscheme'
 Bundle 'Simple-Javascript-Indenter'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Sixeight/unite-grep'
+Bundle 'Shougo/vimfiler'
+
 
 " pathogen
 set rtp+=~/.vim/pathogen/
@@ -147,6 +150,10 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+
+" unite-grep
+let g:unite_source_grep_default_opts = '-iRHn --exclude=*.svn*'
+nnoremap <silent> ,ug :Unite grep:<CR>
 
 
 " enable
