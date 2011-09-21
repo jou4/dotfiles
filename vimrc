@@ -13,7 +13,7 @@ set showmatch
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 set autoread
-set scrolloff=5
+set scrolloff=0
 set fileformats=unix,dos,mac
 set clipboard+=unnamed
 set textwidth=0
