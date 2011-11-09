@@ -36,7 +36,7 @@ set smartcase
 " remove space of eol
 autocmd BufWritePre * :%s/\s\+$//ge
 " replace tab to space
-autocmd BufWritePre * :%s/\t/    /ge
+" autocmd BufWritePre * :%s/\t/    /ge
 
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /\u3000/
@@ -155,6 +155,9 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:unite_source_grep_default_opts = '-iRHn --exclude=*.svn*'
 nnoremap <silent> ,ug :Unite grep:<CR>
 
+
+" Makefile
+au FileType make set noexpandtab
 
 " enable
 filetype plugin indent on
