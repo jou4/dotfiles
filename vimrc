@@ -157,7 +157,7 @@ nnoremap <silent> ,ug :Unite grep:<CR>
 
 
 " Makefile
-au FileType make set noexpandtab
+"au FileType make set noexpandtab
 
 " enable
 filetype plugin indent on
