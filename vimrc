@@ -159,6 +159,9 @@ nnoremap <silent> ,ug :Unite grep:<CR>
 " Makefile
 au FileType make set noexpandtab
 
+" Bodhi
+au BufNewFile,BufRead *.bd setfiletype bodhi
+
 " enable
 filetype plugin indent on
 syntax on
