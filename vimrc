@@ -157,7 +157,7 @@ nnoremap <silent> ,ug :Unite grep:<CR>
 
 
 " Makefile
-au FileType make set noexpandtab
+"au FileType make set noexpandtab
 
 " Bodhi
 au BufNewFile,BufRead *.bd setfiletype bodhi
