@@ -74,6 +74,7 @@ nnoremap <silent> <C-x>3 :vsp<CR>
 nnoremap <C-t> gt
 nnoremap <silent> <C-Tab> :bNext<cr>
 nnoremap <C-n> :tabnew<space>
+nnoremap vv vawy
 
 " vimrc
 command! Ev edit $MYVIMRC
