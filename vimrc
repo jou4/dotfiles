@@ -166,3 +166,15 @@ au BufNewFile,BufRead *.bd setfiletype bodhi
 " enable
 filetype plugin indent on
 syntax on
+
+
+
+
+" help for myself
+" *     search the word pointed by cursor strictly, to the front
+" g*    search the word pointed by cursor to the front
+" #     search the word pointed by cursor strictly, to back
+" g#    search the word pointed by cursor to back
+" viw   selected the word pointed by cursor
+" vaw   selected the word pointed by cursor including space
+" vit   selected the text-node in this tag
