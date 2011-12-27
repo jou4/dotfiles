@@ -5,7 +5,7 @@
 :set smartcase
 
 " カーソル位置の単語をyankする
-nnoremap vv vawy
+nnoremap vv viwy
 
 nnoremap <C-k> <Esc>
 noremap! <C-k> <Esc>
@@ -14,8 +14,6 @@ nnoremap <C-e> $
 inoremap <C-k> <Esc>
 inoremap <C-a> <Esc>0i
 inoremap <C-e> <Esc>$a
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
 
 " srで参照をプロジェクトから検索
 eclipseaction SearchRef  org.eclipse.jdt.ui.edit.text.java.search.references.in.project
