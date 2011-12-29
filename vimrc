@@ -116,7 +116,7 @@ autocmd FileType clojure
             \ :command! Ngconnect execute ":let vimclojure#WantNailgun = 1\n:execute vimclojure#InitBuffer()"
 autocmd FileType clojure
             \ :setlocal lispwords+=defproject,deftest,monad,defmonad,with-monad,domonad,defmonadfn,monad-transformer,with-parser,defparser
-let vimclojure#NailgunClient = "~/Library/Clojure/vimclojure/client/ng"
+let vimclojure#NailgunClient = "ng"
 let vimclojure#HighlightBuiltins = 1
 ":command! Clj execute ":VimShellInteractive clj"
 
