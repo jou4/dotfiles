@@ -97,6 +97,7 @@ Bundle 'Simple-Javascript-Indenter'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Sixeight/unite-grep'
 Bundle 'Shougo/vimfiler'
+Bundle 'msanders/snipmate.vim'
 
 
 " pathogen
