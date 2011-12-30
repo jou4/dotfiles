@@ -98,11 +98,12 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'Sixeight/unite-grep'
 Bundle 'Shougo/vimfiler'
 Bundle 'msanders/snipmate.vim'
+Bundle 'vim-scripts/VimClojure'
 
 
 " pathogen
-set rtp+=~/.vim/pathogen/
-call pathogen#runtime_append_all_bundles('bundle2')
+" set rtp+=~/.vim/pathogen/
+" call pathogen#runtime_append_all_bundles('bundle2')
 
 
 " vimshell
