@@ -9,8 +9,8 @@ do
     fi
 done
 
-git submodule init
-git submodule update
-git submodule foreach 'git checkout master; git pull'
+# git submodule init
+# git submodule update
+# git submodule foreach 'git checkout master; git pull'
 
 echo 'execute :BundleInstall!'

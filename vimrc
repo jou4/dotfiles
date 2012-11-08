@@ -22,9 +22,9 @@ set textwidth=0
 
 " tab
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 set smartindent
 
@@ -98,12 +98,12 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'Sixeight/unite-grep'
 Bundle 'Shougo/vimfiler'
 Bundle 'msanders/snipmate.vim'
-Bundle 'vim-scripts/VimClojure'
+Bundle 'quickrun.vim'
+Bundle 'Markdown'
+Bundle 'tyru/open-browser.vim'
+Bundle 'thinca/vim-ft-clojure'
+Bundle 'vim-scripts/slimv.vim'
 
-
-" pathogen
-" set rtp+=~/.vim/pathogen/
-" call pathogen#runtime_append_all_bundles('bundle2')
 
 
 " vimshell
@@ -112,15 +112,6 @@ vmap <silent> ,s :VimShellSendString<cr>
 " gauche
 autocmd FileType scheme :let is_gauche=1
 :command! Gosh execute ":VimShellInteractive gosh -i"
-
-" vimclojure
-autocmd FileType clojure
-            \ :command! Ngconnect execute ":let vimclojure#WantNailgun = 1\n:execute vimclojure#InitBuffer()"
-autocmd FileType clojure
-            \ :setlocal lispwords+=defproject,deftest,monad,defmonad,with-monad,domonad,defmonadfn,monad-transformer,with-parser,defparser
-let vimclojure#NailgunClient = "ng"
-let vimclojure#HighlightBuiltins = 1
-":command! Clj execute ":VimShellInteractive clj"
 
 " nerdcommenter
 let NERDSpaceDelims = 1
@@ -158,12 +149,22 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:unite_source_grep_default_opts = '-iRHn --exclude=*.svn*'
 nnoremap <silent> ,ug :Unite grep:<CR>
 
+" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config.markdown = {
+      \ 'type': 'markdown/pandoc',
+      \ 'cmdopt': '-s',
+      \ 'outputter': 'browser'
+      \ }
+
 
 " Makefile
-"au FileType make set noexpandtab
+au FileType make set noexpandtab
 
 " Bodhi
 au BufNewFile,BufRead *.bd setfiletype bodhi
+
+
 
 " enable
 filetype plugin indent on
