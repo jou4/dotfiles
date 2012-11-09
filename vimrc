@@ -82,6 +82,7 @@ command! Rv source $MYVIMRC
 
 
 " vundle
+" git clone https://github.com/gmarik/vundle.git ~/.vim/vundle
 set rtp+=~/.vim/vundle/
 call vundle#rc()
 
