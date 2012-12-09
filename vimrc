@@ -34,7 +34,14 @@ set ignorecase
 set smartcase
 
 " remove space of eol
-autocmd BufWritePre * :%s/\s\+$//ge
+fun! StripTrailingWhitespace()
+  " Only strip if the b:noStripeWhitespace variable isn't set
+  if exists('b:noStripWhitespace')
+    return
+  endif
+  " %s/\s\+$//ge
+endfun
+autocmd BufWritePre * call StripTrailingWhitespace()
 " replace tab to space
 " autocmd BufWritePre * :%s/\t/    /ge
 
@@ -61,6 +68,10 @@ set statusline=%F%m%r%h%w%=[%{&ff}\ %{&enc}\ %Y\ %l,%v,%L]
 " keymap
 let mapleader = ','
 let maplocalleader = ' '
+noremap <SID>(increment) <C-a>
+noremap <SID>(decrement) <C-x>
+nmap <C-z> <SID>(increment)
+nmap <C-x> <SID>(decrement)
 noremap <C-k> <Esc>
 noremap! <C-k> <Esc>
 nnoremap <C-a> <Home>
@@ -160,6 +171,12 @@ let g:quickrun_config.markdown = {
 
 " Makefile
 au FileType make set noexpandtab
+
+" Markdown
+au FileType markdown set tabstop=4
+au FileType markdown set softtabstop=4
+au FileType markdown set shiftwidth=4
+au FileType markdown let b:noStripWhitespace=1
 
 " Bodhi
 au BufNewFile,BufRead *.bd setfiletype bodhi
