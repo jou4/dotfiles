@@ -18,8 +18,6 @@ set fileformats=unix,dos,mac
 set clipboard+=unnamed
 set textwidth=0
 
-"colorscheme desert
-
 " tab
 set expandtab
 set tabstop=2
@@ -94,7 +92,7 @@ command! Rv source $MYVIMRC
 
 " vundle
 " git clone https://github.com/gmarik/vundle.git ~/.vim/vundle
-set rtp+=~/.vim/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 
@@ -114,16 +112,20 @@ Bundle 'quickrun.vim'
 Bundle 'Markdown'
 Bundle 'tyru/open-browser.vim'
 Bundle 'thinca/vim-ft-clojure'
-Bundle 'vim-scripts/slimv.vim'
-
 
 
 " vimshell
-vmap <silent> ,s :VimShellSendString<cr>
+nnoremap <silent> ,vs :VimShell<CR>
+nnoremap ,vsi :VimShellInteractive<space>
+nnoremap <silent> ,ghci :VimShellInteractive ghci<CR>
+nnoremap <silent> ,repl :VimShellInteractive lein repl<CR>
+nnoremap <silent> ,node :VimShellInteractive node<CR>
+nnoremap <silent> ,gosh :VimShellInteractive gosh -i<CR>
+nnoremap <silent> ,irb :VimShellInteractive irb<CR>
+vmap <silent> ,s :VimShellSendString<CR>
 
 " gauche
 autocmd FileType scheme :let is_gauche=1
-:command! Gosh execute ":VimShellInteractive gosh -i"
 
 " nerdcommenter
 let NERDSpaceDelims = 1
@@ -189,6 +191,8 @@ filetype plugin indent on
 syntax on
 
 
+" if has('win32') || has('win64')
+" endif
 
 
 " help for myself
