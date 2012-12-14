@@ -91,9 +91,14 @@ command! Rv source $MYVIMRC
 
 
 " vundle
-" git clone https://github.com/gmarik/vundle.git ~/.vim/vundle
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if has('win32') || has('win64')
+  set rtp+=$HOME/vimfiles/bundle/vundle/
+  call vundle#rc('$HOME/vimfiles/bundle')
+else
+  set rtp+=$HOME/.vim/bundle/vundle/
+  call vundle#rc('$HOME/.vim/bundle')
+endif
 
 
 Bundle 'Shougo/neocomplcache'
