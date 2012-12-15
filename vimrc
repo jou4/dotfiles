@@ -68,8 +68,8 @@ let mapleader = ','
 let maplocalleader = ' '
 noremap <SID>(increment) <C-a>
 noremap <SID>(decrement) <C-x>
-nmap <C-z> <SID>(increment)
-nmap <C-x> <SID>(decrement)
+nmap ,incr <SID>(increment)
+nmap ,decr <SID>(decrement)
 noremap <C-k> <Esc>
 noremap! <C-k> <Esc>
 nnoremap <C-a> <Home>
