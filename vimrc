@@ -117,6 +117,7 @@ Bundle 'quickrun.vim'
 Bundle 'Markdown'
 Bundle 'tyru/open-browser.vim'
 Bundle 'thinca/vim-ft-clojure'
+Bundle 'vim-scripts/sudo.vim'
 
 
 " vimshell
