@@ -118,6 +118,12 @@ Bundle 'Markdown'
 Bundle 'tyru/open-browser.vim'
 Bundle 'thinca/vim-ft-clojure'
 Bundle 'vim-scripts/sudo.vim'
+" for Haskell
+Bundle 'dag/vim2hs'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'eagletmt/unite-haddock'
+Bundle 'pbrisbin/html-template-syntax'
 
 
 " vimshell
