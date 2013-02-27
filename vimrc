@@ -119,11 +119,11 @@ Bundle 'tyru/open-browser.vim'
 Bundle 'thinca/vim-ft-clojure'
 Bundle 'vim-scripts/sudo.vim'
 " for Haskell
-Bundle 'dag/vim2hs'
-Bundle 'eagletmt/ghcmod-vim'
-Bundle 'ujihisa/neco-ghc'
-Bundle 'eagletmt/unite-haddock'
-Bundle 'pbrisbin/html-template-syntax'
+" Bundle 'dag/vim2hs'
+" Bundle 'eagletmt/ghcmod-vim'
+" Bundle 'ujihisa/neco-ghc'
+" Bundle 'eagletmt/unite-haddock'
+" Bundle 'pbrisbin/html-template-syntax'
 
 
 " vimshell
@@ -150,7 +150,7 @@ vmap <C-l> <plug>NERDCommenterToggle
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 " レジスタ一覧
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
@@ -158,7 +158,8 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 " 常用セット
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer_tab file_mru file bookmark file/new<CR>
+" nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
