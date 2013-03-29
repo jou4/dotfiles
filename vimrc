@@ -189,6 +189,7 @@ let g:quickrun_config.markdown = {
 au FileType make set noexpandtab
 
 " Markdown
+" open browser: type ',r'
 au FileType markdown set tabstop=4
 au FileType markdown set softtabstop=4
 au FileType markdown set shiftwidth=4
