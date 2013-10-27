@@ -70,8 +70,8 @@ noremap <SID>(increment) <C-a>
 noremap <SID>(decrement) <C-x>
 nmap ,incr <SID>(increment)
 nmap ,decr <SID>(decrement)
-noremap <C-k> <Esc>
-noremap! <C-k> <Esc>
+inoremap <C-@> <Esc>
+inoremap <C-k> <Esc>
 nnoremap <C-a> <Home>
 nnoremap <C-e> <End>
 inoremap <C-a> <Home>
@@ -118,6 +118,7 @@ Bundle 'Markdown'
 Bundle 'tyru/open-browser.vim'
 Bundle 'thinca/vim-ft-clojure'
 Bundle 'vim-scripts/sudo.vim'
+Bundle 'fuenor/im_control.vim'
 " for Haskell
 " Bundle 'dag/vim2hs'
 " Bundle 'eagletmt/ghcmod-vim'
@@ -198,6 +199,20 @@ au FileType markdown let b:noStripWhitespace=1
 " Bodhi
 au BufNewFile,BufRead *.bd setfiletype bodhi
 
+
+" im_control
+" 「日本語入力固定モード」の動作モード
+let IM_CtrlMode = 5
+" 「日本語入力固定モード」切替キー
+inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+" 「日本語入力固定モード」がオンの場合、ステータス行にメッセージ表示
+set statusline+=%{IMStatus('[日本語固定]')}
+" 「日本語入力固定モード」のvi協調モードを無効化
+let IM_vi_CooperativeMode = 0
+" キーマップ
+inoremap <silent> <ESC> <ESC>:call IMCtrl('Off')<CR>
+inoremap <silent> <C-[> <ESC>:call IMCtrl('Off')<CR>
+inoremap <silent> <C-k> <ESC>:call IMCtrl('Off')<CR>
 
 
 " enable
