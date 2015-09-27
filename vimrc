@@ -101,24 +101,25 @@ else
 endif
 
 
-Bundle 'Shougo/neocomplcache'
+Bundle 'kakkyz81/evervim'
+"Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'unite-colorscheme'
-Bundle 'Simple-Javascript-Indenter'
+"Bundle 'Shougo/vimproc'
+"Bundle 'Shougo/vimshell'
+"Bundle 'thinca/vim-ref'
+"Bundle 'thinca/vim-quickrun'
+"Bundle 'unite-colorscheme'
+"Bundle 'Simple-Javascript-Indenter'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Sixeight/unite-grep'
-Bundle 'Shougo/vimfiler'
-Bundle 'msanders/snipmate.vim'
-Bundle 'quickrun.vim'
-Bundle 'Markdown'
-Bundle 'tyru/open-browser.vim'
-Bundle 'thinca/vim-ft-clojure'
-Bundle 'vim-scripts/sudo.vim'
-Bundle 'fuenor/im_control.vim'
+"Bundle 'Sixeight/unite-grep'
+"Bundle 'Shougo/vimfiler'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'quickrun.vim'
+"Bundle 'Markdown'
+"Bundle 'tyru/open-browser.vim'
+"Bundle 'thinca/vim-ft-clojure'
+"Bundle 'vim-scripts/sudo.vim'
+"Bundle 'fuenor/im_control.vim'
 " for Haskell
 " Bundle 'dag/vim2hs'
 " Bundle 'eagletmt/ghcmod-vim'
@@ -127,18 +128,25 @@ Bundle 'fuenor/im_control.vim'
 " Bundle 'pbrisbin/html-template-syntax'
 
 
+" evervim
+let g:evervim_devtoken='S=s43:U=44e431:E=153a3bcdcdd:C=14c4c0bad80:P=1cd:A=en-devtoken:V=2:H=d124c34d1fbeac1608f9739bc2085f7b'
+nnoremap <Leader>l :EvervimNotebookList<CR>
+nnoremap <Leader>s :EvervimSearchByQuery<Space>
+nnoremap <Leader>c :EvervimCreateNote<CR>
+nnoremap <Leader>t :EvervimListTags<CR>
+
 " vimshell
-nnoremap <silent> ,vs :VimShell<CR>
-nnoremap ,vsi :VimShellInteractive<space>
-nnoremap <silent> ,ghci :VimShellInteractive ghci<CR>
-nnoremap <silent> ,repl :VimShellInteractive lein repl<CR>
-nnoremap <silent> ,node :VimShellInteractive node<CR>
-nnoremap <silent> ,gosh :VimShellInteractive gosh -i<CR>
-nnoremap <silent> ,irb :VimShellInteractive irb<CR>
-vmap <silent> ,s :VimShellSendString<CR>
+"nnoremap <silent> ,vs :VimShell<CR>
+"nnoremap ,vsi :VimShellInteractive<space>
+"nnoremap <silent> ,ghci :VimShellInteractive ghci<CR>
+"nnoremap <silent> ,repl :VimShellInteractive lein repl<CR>
+"nnoremap <silent> ,node :VimShellInteractive node<CR>
+"nnoremap <silent> ,gosh :VimShellInteractive gosh -i<CR>
+"nnoremap <silent> ,irb :VimShellInteractive irb<CR>
+"vmap <silent> ,s :VimShellSendString<CR>
 
 " gauche
-autocmd FileType scheme :let is_gauche=1
+"autocmd FileType scheme :let is_gauche=1
 
 " nerdcommenter
 let NERDSpaceDelims = 1
@@ -147,7 +155,7 @@ vmap <C-l> <plug>NERDCommenterToggle
 
 " unite.vim
 " 入力モードで開始する
-" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
@@ -174,16 +182,16 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 
 " unite-grep
-let g:unite_source_grep_default_opts = '-iRHn --exclude=*.svn*'
-nnoremap <silent> ,ug :Unite grep:<CR>
+"let g:unite_source_grep_default_opts = '-iRHn --exclude=*.svn*'
+"nnoremap <silent> ,ug :Unite grep:<CR>
 
 " quickrun
-let g:quickrun_config = {}
-let g:quickrun_config.markdown = {
-      \ 'type': 'markdown/pandoc',
-      \ 'cmdopt': '-s',
-      \ 'outputter': 'browser'
-      \ }
+"let g:quickrun_config = {}
+"let g:quickrun_config.markdown = {
+"      \ 'type': 'markdown/pandoc',
+"      \ 'cmdopt': '-s',
+"      \ 'outputter': 'browser'
+"      \ }
 
 
 " Makefile
@@ -197,22 +205,22 @@ au FileType markdown set shiftwidth=4
 au FileType markdown let b:noStripWhitespace=1
 
 " Bodhi
-au BufNewFile,BufRead *.bd setfiletype bodhi
+"au BufNewFile,BufRead *.bd setfiletype bodhi
 
 
-" im_control
-" 「日本語入力固定モード」の動作モード
-let IM_CtrlMode = 5
-" 「日本語入力固定モード」切替キー
-inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
-" 「日本語入力固定モード」がオンの場合、ステータス行にメッセージ表示
-set statusline+=%{IMStatus('[日本語固定]')}
-" 「日本語入力固定モード」のvi協調モードを無効化
-let IM_vi_CooperativeMode = 0
-" キーマップ
-inoremap <silent> <ESC> <ESC>:call IMCtrl('Off')<CR>
-inoremap <silent> <C-[> <ESC>:call IMCtrl('Off')<CR>
-inoremap <silent> <C-k> <ESC>:call IMCtrl('Off')<CR>
+"" im_control
+"" 「日本語入力固定モード」の動作モード
+"let IM_CtrlMode = 5
+"" 「日本語入力固定モード」切替キー
+"inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+"" 「日本語入力固定モード」がオンの場合、ステータス行にメッセージ表示
+"set statusline+=%{IMStatus('[日本語固定]')}
+"" 「日本語入力固定モード」のvi協調モードを無効化
+"let IM_vi_CooperativeMode = 0
+"" キーマップ
+"inoremap <silent> <ESC> <ESC>:call IMCtrl('Off')<CR>
+"inoremap <silent> <C-[> <ESC>:call IMCtrl('Off')<CR>
+"inoremap <silent> <C-k> <ESC>:call IMCtrl('Off')<CR>
 
 
 " enable
